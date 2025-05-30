@@ -1,4 +1,22 @@
-int mostrarMenu(Pokemon &poke) {
+# Desarrollo Innovador 1: Sistema de turnos.
+¿Para qué se implementó?
+Se implemento para que esta batalla sea más dinámica, y no solo se quede en los que otorgaría la maquina, si no que cada usuario tuviera la opción de elegir su Pokémon favorito.
+Para que se pudiera elegir un Pokémon aleatorio se uso las librerías #include <cstdlib>, #include <ctime>.
+¿Cómo se llevó a cabo su implementación?
+Pokemon jugador2 = (modo == 2)
+    ? elegirPokemonJugador(pokemones)
+    : pokemones[rand() % pokemones.size()];
+En este código de bloque se ve como es la estructura para elegir un aleatorio, especificamente en <rand() % pokemones.size() genera un número aleatorio entre 0 y pokemones.size() - 1.>
+Ese número se usa como índice para seleccionar un Pokémon del vector pokemones.
+
+# Desarrollo Innovador 2: 4 ataques diferentes.
+¿Para qué se implementó?
+El jugador tiene que pensar cuál es el mejor para usar y el combate se vuelve más estratégico y menos aleatorio.
+Hace las rondas más dinámicas.
+¿Cómo se llevó a cabo su implementación?
+Esa parte ocurre en la función mostrarMenu():
+
+"int mostrarMenu(Pokemon &poke) {
 	int opcion;
 	cout << "\nTurno de " << poke.nombre << ". Elige un ataque:\n";
 	cout << "1. " << poke.ataque1.nombre << "\n";
@@ -12,9 +30,9 @@ int mostrarMenu(Pokemon &poke) {
 		cin >> opcion;
 	}
 	return opcion;
-}
+}"
 Y luego, en usarAtaque(), se ejecuta el ataque seleccionado:
-void usarAtaque(int opcion, Pokemon &oponente) {
+"void usarAtaque(int opcion, Pokemon &oponente) {
 	Ataque ataqueSeleccionado = ataque1;
 	switch (opcion) {
 		case 1: ataqueSeleccionado = ataque1; break;
@@ -24,5 +42,5 @@ void usarAtaque(int opcion, Pokemon &oponente) {
 	}
 	cout << nombre << " usa " << ataqueSeleccionado.nombre << "!" << endl;
 	oponente.recibirDaño(ataqueSeleccionado.daño);
-	cout << oponente.nombre << " recibe " << ataqueSeleccionado.daño << " de daño.\n";
-}
+	cout << oponente.nombre << " recibe " << ataqueSeleccionado.daño << " de daño.\n";
+}"
