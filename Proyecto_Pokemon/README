@@ -1,1 +1,28 @@
-
+int mostrarMenu(Pokemon &poke) {
+	int opcion;
+	cout << "\nTurno de " << poke.nombre << ". Elige un ataque:\n";
+	cout << "1. " << poke.ataque1.nombre << "\n";
+	cout << "2. " << poke.ataque2.nombre << "\n";
+	cout << "3. " << poke.ataque3.nombre << "\n";
+	cout << "4. " << poke.ataque4.nombre << "\n";
+	cout << "Opcion: ";
+	cin >> opcion;
+	while (opcion != 1 && opcion != 2 && opcion != 3 && opcion != 4) {
+		cout << "Opción invalida. Intenta de nuevo: ";
+		cin >> opcion;
+	}
+	return opcion;
+}
+Y luego, en usarAtaque(), se ejecuta el ataque seleccionado:
+void usarAtaque(int opcion, Pokemon &oponente) {
+	Ataque ataqueSeleccionado = ataque1;
+	switch (opcion) {
+		case 1: ataqueSeleccionado = ataque1; break;
+		case 2: ataqueSeleccionado = ataque2; break;
+		case 3: ataqueSeleccionado = ataque3; break;
+		case 4: ataqueSeleccionado = ataque4; break;
+	}
+	cout << nombre << " usa " << ataqueSeleccionado.nombre << "!" << endl;
+	oponente.recibirDaño(ataqueSeleccionado.daño);
+	cout << oponente.nombre << " recibe " << ataqueSeleccionado.daño << " de daño.\n";
+}
