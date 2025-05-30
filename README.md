@@ -8,6 +8,10 @@ Parcial
 # Proyectos:
 
 # 1. Proyecto Pokemon 
+Desarrollos innovadores:
+-El sistema de turnos le permite al usuario elegir entre jugar con la cpu o jugar con alguien más.
+-Cada Pokemon tiene 4 ataques diferentes.
+-Se creo un sistema de imagen, el que permite mostrar las imágenes de los Pokémones y un Pokemon random, siendo esta la opción uno.
 
 # 2. Proyecto Parqueadero
 Desarrollos innovadores:
