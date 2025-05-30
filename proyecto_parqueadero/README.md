@@ -42,12 +42,12 @@ Con la función `mostrar_parqueadero`, que imprime el parqueadero respetando una
 
 
 
-# 4. Cálculo de tiempo y cobro con `datetime`
+# Desarrollo Innovador 4: Cálculo de tiempo y cobro con `datetime`
 
-- # ¿Para qué?
+# ¿Para qué?
 Para calcular cuántos minutos estuvo el carro y cuánto tiene que pagar.
-- # ¿Por qué?
+# ¿Por qué?
 Porque no solo se trata de guardar la hora, sino de restar la hora de entrada y salida y cobrar por minuto.
-- # ¿Cómo? Se usa?
+# ¿Cómo? Se usa?
 `datetime` para registrar la hora de entrada, y luego cuando el carro sale, se compara con esa hora usando `timedelta`. Luego se multiplica por el valor por minuto.
 
