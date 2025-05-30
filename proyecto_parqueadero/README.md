@@ -25,11 +25,11 @@ Porque mejora la experiencia de usuario al usar identificadores legibles en luga
 (Es más claro usar una letra y número que contar filas y columnas)
 
 ### ¿Cómo se llevó a cabo su implementación?
-La función `convertir_codigo_a_posicion` convierte un código como 'A1' en índices de fila y columna válidos para el sistema, siendo una posicion valida del parqueadero 
+La función `convertir_codigo_a_posicion` convierte un código como 'A1' en índices de fila y columna válidos para el sistema, siendo una posicion interna del parqueadero. 
 
 
 
-# Desarrollo Innovador 3: Visualización clara del parqueadero
+# Desarrollo Innovador 3: Visualización del parqueadero
 
 # ¿Para qué se implementó?
 Para permitir una visualización fácil y rápida del estado del parqueadero.
@@ -38,5 +38,13 @@ Para permitir una visualización fácil y rápida del estado del parqueadero.
 Ayuda a identificar visualmente los espacios disponibles, ocupados y zonas de tránsito.
 
 # ¿Cómo se llevó a cabo su implementación?
-Con la función `mostrar_parqueadero`, que imprime el parqueadero respetando una convención clara de símbolos y posiciones codificadas.
+Con la función `mostrar_parqueadero`, que imprime el parqueadero respetando una convención clara de símbolos y posiciones codificadas. Mostrando en la pantalla XX si esta ocupado el espacio o ej. A1 si esta vacio 
+
+
+
+# 4. Cálculo de tiempo y cobro con `datetime`
+
+¿Para qué?** Para calcular cuántos minutos estuvo el carro y cuánto tiene que pagar.
+- **¿Por qué?** Porque no solo se trata de guardar la hora, sino de restar la hora de entrada y salida y cobrar por minuto.
+- **¿Cómo?** Se usa `datetime` para registrar la hora de entrada, y luego cuando el carro sale, se compara con esa hora usando `timedelta`. Luego se multiplica por el valor por minuto.
 
