@@ -1,4 +1,4 @@
-# Desarrollo Innovador 1: Sistema de turnos.
+Desarrollo Innovador 1: Sistema de turnos.
 ¿Para qué se implementó?
 Se implemento para que esta batalla sea más dinámica, y no solo se quede en los que otorgaría la maquina, si no que cada usuario tuviera la opción de elegir su Pokémon favorito.
 Para que se pudiera elegir un Pokémon aleatorio se uso las librerías #include <cstdlib>, #include <ctime>.
@@ -6,10 +6,12 @@ Para que se pudiera elegir un Pokémon aleatorio se uso las librerías #include 
 Pokemon jugador2 = (modo == 2)
     ? elegirPokemonJugador(pokemones)
     : pokemones[rand() % pokemones.size()];
-En este código de bloque se ve como es la estructura para elegir un aleatorio, especificamente en <rand() % pokemones.size() genera un número aleatorio entre 0 y pokemones.size() - 1.>
+En este código de bloque se ve como es la estructura para elegir un aleatorio, especificamente en "<rand() % pokemones.size()" genera un número aleatorio entre 0 y pokemones.size() - 1.>
 Ese número se usa como índice para seleccionar un Pokémon del vector pokemones.
 
-# Desarrollo Innovador 2: 4 ataques diferentes.
+
+
+Desarrollo Innovador 2: 4 ataques diferentes.
 ¿Para qué se implementó?
 El jugador tiene que pensar cuál es el mejor para usar y el combate se vuelve más estratégico y menos aleatorio.
 Hace las rondas más dinámicas.
@@ -44,3 +46,44 @@ Y luego, en usarAtaque(), se ejecuta el ataque seleccionado:
 	oponente.recibirDaño(ataqueSeleccionado.daño);
 	cout << oponente.nombre << " recibe " << ataqueSeleccionado.daño << " de daño.\n";
 }"
+
+
+
+Desarrollo Innovador 3: Sistema de imágen
+¿Para qué se implementó?
+Cada Pokémon tiene un sprite o imagen única que ayuda a los jugadores a reconocerlo de inmediato, realmente la mayoría de los jugadores esperan ver a los Pokémon, no solo leer sobre ellos.
+¿Cómo se llevó a cabo su implementación?
+Se debe de instalar esta libreria para vs code, incluirla en el path y luego agregarlo a nuestro compilador, para entender más facilmente su instalación guiarse en este tutorial.
+https://www.youtube.com/watch?v=Qqk9o2RIayw .
+
+Inicialmente se crea una ventana gráfica (1000x900) con SFML para mostrar el combate Pokémon.
+Carga imágenes:
+Fondo del menú principal y de batalla.
+Sprites de Pokémon seleccionados (jugador y CPU).
+
+Define clases:
+Ataque: representa un movimiento con nombre y daño.
+Pokemon: tiene nombre, vida, 4 ataques, imagen y funciones básicas.
+
+Muestra menú principal con opciones:
+1: Modo un jugador (contra la CPU).
+2: Modo dos jugadores (aún sin implementar).
+
+Permite elegir Pokémon, presionando entre A a I eliges uno de los 9 Pokémon, una vez elegido, se muestran las imágenes del Pokémon jugador y del Pokémon rival (CPU).
+
+Aún no se implementa el combate como tal (falta lógica de ataque y turno)
+Para que este código compile correctamente, se deben de descargar las carpetas de "imagen","imagenpoke" y "texto", y en los lugares donde se ve una ruta copiar donde se encuentra cada archivo.
+EJ->
+if(!font.openFromFile("C:\\Users\\USUARIO\\Desktop\\PARCIAL\\Texto\\CoffeCake.ttf")){
+
+if(!font.openFromFile("RUTA DONDE SE ENCUENTRA LA FUENTE")){   #texto
+
+if(!texture2.loadFromFile("C:\\Users\\USUARIO\\Desktop\\PARCIAL\\imagen\\fondopoke2.png")){
+
+if(!texture2.loadFromFile("RUTA DONDE SE ENCUENTRA EL FONDO")){   #imagen
+
+        Pokemon("i. Hippopotas/Tierra", 150, Ataque("Mordisco", 10), Ataque("Fisura", 15), Ataque("Triturar", 15), Ataque("Excavar", 10),
+        "C:\\Users\\USUARIO\\Desktop\\PARCIAL\\imagenespoke\\hippopotas.png"),
+
+        Pokemon("i. Hippopotas/Tierra", 150, Ataque("Mordisco", 10), Ataque("Fisura", 15), Ataque("Triturar", 15), Ataque("Excavar", 10),
+        "RUTA DONDE SE ENCUENTRA LA IMAGEN DEL  POKEMON"),  #imagenespoke.
